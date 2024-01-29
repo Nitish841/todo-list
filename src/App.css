@@ -1,0 +1,15 @@
+center {
+  width: 50%;
+  margin: auto;
+  margin-top: 25px;
+  min-width: 400px;
+}
+.listItem div {
+  float: left;
+}
+.listItem button {
+  float: right;
+}
+.btn-info {
+  margin-right: 5px;
+}
