@@ -4,9 +4,17 @@ import itemSlice, { itemSliceAction } from '../store';
 const AddTodo = () => {
   const dispatch = useDispatch();
   const todoRef = useRef();
+  const todoDateRef = useRef();
   const handleClick = () => {
-    dispatch(itemSliceAction.addItem(todoRef.current.value));
+    dispatch(
+      itemSliceAction.addItem({
+        todoName: todoRef.current.value,
+        todoDate: todoDateRef.current.value,
+        completed: false,
+      })
+    );
     todoRef.current.value = '';
+    todoDateRef.current.value = '';
   };
   return (
     <div className="input-group input-group-sm mb-3">
@@ -19,6 +27,13 @@ const AddTodo = () => {
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-sm"
         ref={todoRef}
+      />
+      <input
+        type="date"
+        className="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm"
+        ref={todoDateRef}
       />
       <button type="button" className="btn btn-primary" onClick={handleClick}>
         Add

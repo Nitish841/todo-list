@@ -2,14 +2,36 @@ center {
   width: 50%;
   margin: auto;
   margin-top: 25px;
-  min-width: 400px;
+  min-width: 1000px;
 }
-.listItem div {
+
+li.list-group-item.listItem {
+  display: flex;
+  justify-content: space-between;
+}
+li.list-group-item.listItem.completed {
+  background-color: green;
+  color: white;
+}
+
+#todoitem {
+  width: 750px;
   float: left;
 }
-.listItem button {
+#name {
+  float: left;
+}
+#date {
   float: right;
 }
-.btn-info {
-  margin-right: 5px;
+
+#button {
+  width: 180px;
+  float: right;
+}
+button.btn.btn-info {
+  float: left;
+}
+button.btn.btn-danger {
+  float: right;
 }
